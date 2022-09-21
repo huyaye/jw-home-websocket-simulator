@@ -1,0 +1,22 @@
+.device {
+  padding: 5px;
+  border: 1px double rgb(69, 136, 110);
+  background-color: rgb(206, 183, 135);
+  margin: 1px;
+  display: flex;
+}
+
+.device_content {
+  margin-left: 10px;
+}
+
+.addDevice {
+  padding: 5px;
+  border: 1px double rgb(69, 136, 110);
+  background-color: rgb(181, 221, 226);
+  margin-top: 10px;
+}
+
+.addDevice_content {
+  margin: 2px;
+}
