@@ -3,7 +3,7 @@ const {
   establishSession,
   closeSession,
   sendMessage,
-} = require("./websocketService");
+} = require("./WebsocketService");
 const { getTraits } = require("./ProtocolService");
 
 const Device = require("./model/DeviceModel");

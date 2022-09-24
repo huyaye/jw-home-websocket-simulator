@@ -9,7 +9,7 @@ const sessionRegistry = {};
 exports.establishSession = (serial) => {
   console.log("establish : " + serial);
   const session = new WebSocket(
-    "ws://localhost:9090/websocket/connect?serial=" + serial
+    process.env.WEBSOCKET_SERVER_URI + "/websocket/connect?serial=" + serial
   );
   session.onopen = (event) => {
     console.log(`WebSocket open : ${serial}`);

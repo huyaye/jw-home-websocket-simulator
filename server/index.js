@@ -12,7 +12,6 @@ mongoose
   .then(() => console.log("Successfully connected to mongodb"))
   .catch((e) => console.error(e));
 
-const PORT = process.env.PORT || 3001;
 const app = express();
 app.use(express.json());
 
@@ -43,12 +42,15 @@ app.get("/api/users/:userId/homes", (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
+const PORT = process.env.SERVER_PORT || 3001;
+app.listen(process.env.PORT || 3001, () => {
   console.log(`Server listening on ${PORT}`);
 });
 
-// const path = require("path");
-// app.use(express.static(path.join(__dirname, "../client/build")));
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname + "../client/build/index.html"));
-// });
+if (process.env.PROFILE === "product") {
+  const path = require("path");
+  app.use(express.static(path.join(__dirname, "../client/build")));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname + "../client/build/index.html"));
+  });
+}
