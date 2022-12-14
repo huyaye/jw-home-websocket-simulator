@@ -43,7 +43,7 @@ app.get("/api/users/:userId/homes", (req, res) => {
 });
 
 const PORT = process.env.SERVER_PORT || 3001;
-app.listen(process.env.PORT || 3001, () => {
+app.listen(PORT || 3001, () => {
   console.log(`Server listening on ${PORT}`);
 });
 
